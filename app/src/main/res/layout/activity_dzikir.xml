@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="id.web.dedekurniawan.dailyreminder.dzikir.DzikirViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        tools:context=".DzikirActivity">
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPaddingLeft="@dimen/content_padding"
+            card_view:contentPaddingRight="@dimen/content_padding"
+            card_view:contentPaddingTop="@dimen/content_padding"
+            card_view:contentPaddingBottom="@dimen/content_padding">
+
+            <TextView
+                android:id="@+id/arabic_dzikir_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/counter_text"
+                tools:text="اللهُ اكبَرْ, اللهُ اكبَرْ اللهُ اكبَرْ لاالٰهَ اِلاالله وَاللهُ اَكبر, اللهُ اكبَرُوَِللهِ الحَمْد"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            card_view:cardCornerRadius="2dp"
+            card_view:contentPaddingLeft="@dimen/content_padding"
+            card_view:contentPaddingRight="@dimen/content_padding"
+            card_view:contentPaddingTop="@dimen/content_padding"
+            card_view:contentPaddingBottom="@dimen/content_padding">
+
+            <TextView
+                android:id="@+id/dzikir_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/counter_text"
+                tools:text="Allaahu akbar allaahu akbar allaahu akbar. laa ilaaha illallaahu wallaahu akbar. Allaahu akbar wa lillaahil-hamd."/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/counter_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/counter_text"
+            tools:text="0"/>
+
+        <Button
+            android:id="@+id/counter_button"
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:text="@string/increase_counter"
+            android:onClick="@{() -> viewModel.increaseCounter()}"/>
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/reset"
+            android:onClick="@{() -> viewModel.reset()}"/>
+
+    </LinearLayout>
+</layout>
